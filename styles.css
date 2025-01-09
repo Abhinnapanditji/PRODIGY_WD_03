@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1a1a1a, #333333);
+    color: #f5f5f5;
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    color: #ffcc00;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    margin: 20px auto;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #222;
+    border: 1px solid #444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    cursor: pointer;
+    color: #f5f5f5;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.cell:hover {
+    background-color: #444;
+    transform: scale(1.1);
+}
+
+.cell.winner {
+    animation: highlight 1s ease-in-out infinite;
+}
+
+.status {
+    font-size: 1.2em;
+    margin: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    margin-top: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Animation for winning cells */
+@keyframes highlight {
+    0% { background-color: rgba(0, 255, 0, 0.3); }
+    50% { background-color: rgba(0, 255, 0, 0.6); }
+    100% { background-color: rgba(0, 255, 0, 0.3); }
+}
